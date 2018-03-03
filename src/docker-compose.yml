@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  tasksservice:
+    image: tasksservice
+    build:
+      context: .
+      dockerfile: TasksService/Dockerfile
+    environment:
+      AWS_ACCESS_KEY_ID: AKIAJBLF3UDEOYW55XLQ
+      AWS_SECRET_ACCESS_KEY: 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

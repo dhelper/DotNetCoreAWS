@@ -58,7 +58,7 @@ namespace TasksService
             {
                 result.Title = getObjectResponse.Metadata["x-amz-meta-title"];
 
-                result.Content = reader.ReadToEnd();
+                result.Content = await reader.ReadToEndAsync();
             }
 
             return result;

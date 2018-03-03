@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueListener", "QueueListener\QueueListener.csproj", "{70A39E8D-9B97-46AA-A125-BE38A678AF9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QueueListener", "QueueListener\QueueListener.csproj", "{70A39E8D-9B97-46AA-A125-BE38A678AF9F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksService", "TasksService\TasksService.csproj", "{09091D19-93BD-465E-870E-9A6D0EE460FC}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C027F5A6-BC16-4C9D-B341-701907C4B0D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatcherLambda", "..\WatcherLambda\WatcherLambda.csproj", "{1902D92F-7572-455E-AD3C-EDAED2C9BA3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{C027F5A6-BC16-4C9D-B341-701907C4B0D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C027F5A6-BC16-4C9D-B341-701907C4B0D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C027F5A6-BC16-4C9D-B341-701907C4B0D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1902D92F-7572-455E-AD3C-EDAED2C9BA3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1902D92F-7572-455E-AD3C-EDAED2C9BA3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1902D92F-7572-455E-AD3C-EDAED2C9BA3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1902D92F-7572-455E-AD3C-EDAED2C9BA3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

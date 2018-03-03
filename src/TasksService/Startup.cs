@@ -29,7 +29,13 @@ namespace TasksService
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
+            
+            var awsOptions = Configuration.GetAWSOptions();
+            awsOptions.Credentials = new EnvironmentVariablesAWSCredentials();
+            awsOptions.Region = RegionEndpoint.CACentral1;
+            services.AddDefaultAWSOptions(awsOptions);
+            services.AddAWSService<IAmazonS3>();
+           
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Tasks API", Version = "v1" });
@@ -37,11 +43,12 @@ namespace TasksService
                 var xmlPath = Path.Combine(basePath, $"{PlatformServices.Default.Application.ApplicationName}.xml");
                 c.IncludeXmlComments(xmlPath);
             });
-
+            
             var builder = new ContainerBuilder();
-
+            /*
             var s3Client = new AmazonS3Client(new EnvironmentVariablesAWSCredentials(), RegionEndpoint.CACentral1);
             builder.RegisterInstance(s3Client).As<IAmazonS3>();
+            */
             builder.RegisterType<TasksS3Repository>().As<ITasksRepository>();
             builder.Populate(services);
             ApplicationContainer = builder.Build();
@@ -63,9 +70,5 @@ namespace TasksService
             app.UseSwagger();
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tasks API"); });
         }
-    }
-
-    public class MyOptions
-    {
     }
 }

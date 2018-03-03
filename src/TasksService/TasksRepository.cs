@@ -24,9 +24,9 @@ namespace TasksService
             {
                 BucketName = BucketName
             };
-            var response = _client.ListObjectsAsync(request);
+            var response = await _client.ListObjectsAsync(request);
             var resultList = new List<TodoWithId>();
-            foreach (var s3Object in response.Result.S3Objects)
+            foreach (var s3Object in response.S3Objects)
             {
                 var result = await GetTaskById(s3Object.Key);
 

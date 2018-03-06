@@ -39,7 +39,7 @@ namespace WatcherLambda
         /// <param name="s3Client"></param>
         public Function(IAmazonS3 s3Client)
         {
-            this.S3Client = s3Client;
+            S3Client = s3Client;
 
             _queueUrl = Environment.GetEnvironmentVariable("queueUrl");
         }
@@ -69,7 +69,7 @@ namespace WatcherLambda
                 {
                     var message = await reader.ReadToEndAsync();
 
-                    result = await SqsClient.SendMessageAsync(_queueUrl, message);
+                    result = await SqsClient.SendMessageAsync(_queueUrl, $"New Task Created:\n{message}");
                 }
 
                 return result;

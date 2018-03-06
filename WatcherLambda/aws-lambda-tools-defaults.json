@@ -1,19 +1,21 @@
+
 {
-  "Information": [
-    "This file provides default values for the deployment wizard inside Visual Studio and the AWS Lambda commands added to the .NET Core CLI.",
-    "To learn more about the Lambda commands with the .NET Core CLI execute the following command at the command line in the project root directory.",
-
-    "dotnet lambda help",
-
-    "All the command line options for the Lambda command can be specified in this file."
-  ],
-
-  "profile":"drorh_rapaport_dev",
-  "region" : "us-east-1",
-  "configuration": "Release",
-  "framework": "netcoreapp2.0",
-  "function-runtime": "dotnetcore2.0",
-  "function-memory-size": 256,
-  "function-timeout": 30,
-  "function-handler": "WatcherLambda::WatcherLambda.Function::FunctionHandler"
+    "Information" : [
+        "This file provides default values for the deployment wizard inside Visual Studio and the AWS Lambda commands added to the .NET Core CLI.",
+        "To learn more about the Lambda commands with the .NET Core CLI execute the following command at the command line in the project root directory.",
+        "dotnet lambda help",
+        "All the command line options for the Lambda command can be specified in this file."
+    ],
+    "profile"     : "Lambda_user",
+    "region"      : "ca-central-1",
+    "configuration" : "Release",
+    "framework"     : "netcoreapp2.0",
+    "function-runtime" : "dotnetcore2.0",
+    "function-memory-size" : 256,
+    "function-timeout"     : 300,
+    "function-handler"     : "WatcherLambda::WatcherLambda.Function::FunctionHandler",
+    "function-name"        : "S3Watcher",
+    "function-role"        : "arn:aws:iam::846304898560:role/S3WatcherLambdaRole",
+    "tracing-mode"         : "PassThrough",
+    "environment-variables" : "\"queueUrl\"=\"https://sqs.ca-central-1.amazonaws.com/846304898560/MyMessageQ\""
 }

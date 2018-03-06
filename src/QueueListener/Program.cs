@@ -1,5 +1,6 @@
 ﻿using System;
 using Amazon;
+using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.SQS;
 
@@ -13,13 +14,12 @@ namespace QueueListener
         {
 
             var chain = new CredentialProfileStoreChain();
-            if (!chain.TryGetAWSCredentials("speaker", out var awsCredentials))
+            if (!chain.TryGetAWSCredentials("speaker2", out var awsCredentials))
             {
                 Console.WriteLine("Can't find profile, configure profile and try again");
 
                 return;
             }
-
             var sqs = new AmazonSQSClient(awsCredentials, RegionEndpoint.CACentral1);
             var wrapper = new QueueWrapper(sqs);
 

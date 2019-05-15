@@ -20,7 +20,7 @@ namespace QueueListener
         {
             Console.WriteLine("Check if queue exist");
 
-            var queueUrl = await CheackIfQueueExist(queueName);
+            var queueUrl = await CheckIfQueueExist(queueName);
 
             if (queueUrl == null)
             {
@@ -57,7 +57,7 @@ namespace QueueListener
             return result;
         }
 
-        private async Task<string> CheackIfQueueExist(string queueName)
+        private async Task<string> CheckIfQueueExist(string queueName)
         {
             var listQueuesRequest = new ListQueuesRequest
             {

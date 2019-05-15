@@ -1,16 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Amazon.Lambda.Core" Version="1.0.0" />
-    <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.1.0" />
-    <PackageReference Include="Amazon.Lambda.S3Events" Version="1.0.2" />
-    <PackageReference Include="AWSSDK.S3" Version="3.3.17.1" />
-    <PackageReference Include="AWSSDK.SQS" Version="3.3.3.3" />
+    <None Remove="Properties\launchSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Properties\launchSettings.json">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Amazon.Lambda.Core" Version="1.1.0" />
+    <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.5.0" />
+    <PackageReference Include="Amazon.Lambda.S3Events" Version="1.1.0" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.101.16" />
+    <PackageReference Include="AWSSDK.SQS" Version="3.3.100.18" />
   </ItemGroup>
 
   <ItemGroup>

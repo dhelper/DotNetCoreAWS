@@ -6,16 +6,16 @@
         "dotnet lambda help",
         "All the command line options for the Lambda command can be specified in this file."
     ],
-    "profile"     : "Lambda_user",
-    "region"      : "ca-central-1",
+    "profile"     : "<insert user here>",
+    "region"      : "eu-central-1",
     "configuration" : "Release",
-    "framework"     : "netcoreapp2.0",
-    "function-runtime" : "dotnetcore2.0",
+    "framework"     : "netcoreapp2.1",
+    "function-runtime" : "dotnetcore2.1",
     "function-memory-size" : 256,
     "function-timeout"     : 300,
     "function-handler"     : "WatcherLambda::WatcherLambda.Function::FunctionHandler",
     "function-name"        : "S3Watcher",
     "function-role"        : "arn:aws:iam::846304898560:role/S3WatcherLambdaRole",
     "tracing-mode"         : "PassThrough",
-    "environment-variables" : "\"queueUrl\"=\"https://sqs.ca-central-1.amazonaws.com/846304898560/MyMessageQ\""
+    "environment-variables" : "\"queueUrl\"=\"https://sqs.eu-central-1.amazonaws.com/846304898560/MyMessageQ\""
 }

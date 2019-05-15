@@ -32,7 +32,7 @@ namespace TasksService
             
             var awsOptions = Configuration.GetAWSOptions();
             awsOptions.Credentials = new EnvironmentVariablesAWSCredentials();
-            awsOptions.Region = RegionEndpoint.CACentral1;
+            awsOptions.Region = RegionEndpoint.EUCentral1;
             services.AddDefaultAWSOptions(awsOptions);
             services.AddAWSService<IAmazonS3>();
            

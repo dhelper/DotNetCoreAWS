@@ -11,7 +11,7 @@ namespace TasksService
     public class TasksS3Repository : ITasksRepository
     {
         private readonly IAmazonS3 _client;
-        private const string BucketName = "dror.tasks";
+        private const string BucketName = "dror.tasks.2";
 
         public TasksS3Repository(IAmazonS3 client)
         {
